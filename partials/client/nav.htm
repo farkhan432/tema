@@ -1,0 +1,21 @@
+[viewBag]
+==
+<div class="module-sidemenu">
+    <ul>
+        <li class="head-link"><span>Profile Ku</span></li>
+        <li><a href="{{ 'account'|page }}">Pilih Password</a></li>
+        <li><a href="javascript:;" data-request="onLogout">Keluar</a></li>
+    </ul>
+</div>
+<div class="module-sidemenu">
+    <ul>
+        <li class="head-link">
+            <a href="{{ 'clients'|staticPage }}">Client area</a>
+        </li>
+        {% for item in clientMenu.menuItems %}
+            <li class="{{ item.isActive ? 'active' : '' }}">
+                <a href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
